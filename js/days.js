@@ -34,7 +34,3 @@ var sliderElem = document.getElementById('slider');
       }
       document.getElementById('thumb').innerHTML = event.detail + ' ' + sufix;
     });
-
-    sliderElem.addEventListener('change', function(event) {
-      document.getElementById('change').innerHTML = event.detail;
-    });
