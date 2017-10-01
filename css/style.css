@@ -210,6 +210,7 @@ body {
   bottom: 100%;
   left: 0;
   transform: translateX(25%);
+  min-width: 90px;
 }
 .form .line .icon:hover .icon-hover {
   display: block;
