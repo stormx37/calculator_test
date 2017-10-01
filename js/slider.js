@@ -9,7 +9,7 @@ function Slider(options) {
   // [<*>----------------]
   //   |...............|
   // first            last
-  var pixelsPerValue = (elem.clientWidth - thumbElem.clientWidth) / max;
+  var pixelsPerValue = (elem.offsetWidth - thumbElem.offsetWidth) / max;
 
   elem.ondragstart = function() {
     return false;
