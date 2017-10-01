@@ -327,6 +327,9 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+select::-ms-expand {
+  display: none;
+}
 .form .white-box input[type="checkbox"] {
   display: none;
 }
