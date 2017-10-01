@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Calculator test</title>
+    <link rel="stylesheet/less" type="text/css" href="css/style.less">
+<!--    <link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+    <script src="https://cdn.polyfill.io/v1/polyfill.js?features=CustomEvents,Element.prototype.closest"></script>
+	<script src="js/slider.js"></script>
+	
+</head>
+<body>
+
+<div class="container">
+	
+	<form class="form">
+       
+        <div class="line clearfix">
+            <div class="col" >
+                <label for="weight">Вес изделия</label>
+            </div>
+            <div class="col">
+                <input id="weight" type="text" class="form-input form-input-transparent" value="15 г">
+            </div>
+	    </div>
+	    
+	    <div class="line clearfix">
+            <div class="col">
+                <label for="proba">Проба металла</label>	    
+            </div>
+            <div class="col select">
+                <select id="proba" class="form-input form-input-transparent">
+                    <option selected>585 проба</option>
+                    <option>685 проба</option>
+                    <option>785 проба</option>
+                </select>
+            </div>
+        </div>
+        
+        
+        <div class="line clearfix">
+           <input id="checkbox-1" type="checkbox" checked>
+            <div class="col hidden-block">				
+            	<label for="checkbox-1" class="yes-lbl"><span class="no">нет</span><span class="yes">да</span><span class="lbl-txt">Камни и вставки</span></label>            	
+            </div>
+            <div class="col">
+                <div class="form-red">Окончательная оценочная стоимость залога может отличаться от указанной в расчете</div>
+            </div>
+        </div>
+        
+        
+        <div class="line clearfix">
+            <div class="col">
+                <label for="tarif">Тарифный план<span class="icon"><span class="icon-hover">Игорёк молодец!</span></span></label>	    
+            </div>
+            <div class="col select">
+                <select id="tarif" class="form-input form-input-white">
+                    <option selected>"Простой"</option>
+                    <option>"Сложный"</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="line clearfix">
+            <div class="col">
+                <label for="discount">Ваш дисконтный статус</label>	    
+            </div>
+            <div class="col select">
+                <select id="discount" class="form-input form-input-white">
+                    <option selected>Без статуса</option>
+                    <option>Со статусом</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="line clearfix">
+            <div class="col">
+                <label for="discount">Срок до продления</label>	    
+            </div>
+            <div class="col slider-box">                
+			  <div id="slider" class="slider">
+				<div class="thumb" id="thumb">0 дней</div>
+			  </div>
+				<script src="js/days.js"></script>
+                
+            </div>
+        </div>
+        
+        
+        <div class="white-box">
+        	<input id="checkbox-2" type="checkbox" checked>
+        	<label for="checkbox-2"></label>
+        </div>
+        <div>
+        	<input type="submit" value="Рассчитать кредит">
+        </div>
+
+		</form>
+		
+</div>	
+</body>
+</html>

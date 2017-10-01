@@ -1,0 +1,396 @@
+/* CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic');
+
+*, *:before, *:after {		
+	box-sizing: border-box;
+}
+
+@bg-white: #ffffff;
+@bg-black: #000000;
+@bg-whitef6: #f6f6f6;
+@bg-greyac: #acacac;
+@bg-red: #e60000;
+@bg-darkgrey: #7f7f7f;
+@bg-black-transp: rgba(0,0,0,0.25);
+@font-ptsans: 'PT Sans', sans-serif;
+
+body {
+	margin: 0;
+	padding: 0;	
+}
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.container {
+	width: 700px;
+	margin: 0 auto;
+    margin-top: 70px;
+    background-color: @bg-whitef6;
+}
+
+	.form {
+		width: 430px; 
+		margin: 0 auto;
+		font-family: @font-ptsans;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	
+		.col {
+			float: left;
+			width: 50%;
+		}
+
+		.col+.col {
+			text-align: right;
+		}
+
+		.form-input {
+			font-family: @font-ptsans;
+			font-size: 18px;
+			font-weight: 400;
+			margin: 0;
+			width: 200px;
+			outline: none;
+		}
+		
+		.form-input-transparent {
+			background: none;
+			border: none;
+			border-bottom: 1px solid @bg-greyac;
+			padding: 5px 0;
+		}
+		
+		.form-input-white {
+			border: 1px solid @bg-greyac;
+			border-radius: 50px;
+			padding: 5px 15px;
+			background: rgba(255, 255, 255, 0.2);
+		}
+		
+		label {
+			font-size: 16px;
+			font-weight: bold;
+			display: block;
+			padding: 7px 0;
+		}
+		
+		.line+.line {
+			margin-top: 25px;
+		}
+		
+		.line .icon {
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			background: url('../img/i.png');
+			position: relative;
+			top: 5px;
+			margin-left: 15px;
+			cursor: pointer;
+		}
+		
+		.line .icon-hover {
+			display: none;
+			position: absolute;
+			background: @bg-white;
+			-webkit-box-shadow: 1px -1px 5px 2px @bg-black-transp;
+			-moz-box-shadow: 1px -1px 5px 2px @bg-black-transp;
+			box-shadow: 1px -1px 5px 2px @bg-black-transp;
+			font-size: 12px;
+			font-weight: normal;
+			padding: 5px;
+			bottom: 100%;
+			left: 0;
+			transform: translateX(25%);
+		}
+		
+		.line .icon:hover .icon-hover {
+			display: block;
+		}
+	}
+	
+.form .line {
+	position: relative;
+	input[type="checkbox"] {
+		display: none;
+	}
+
+	input[type="checkbox"] + .col > label {
+		position: relative;
+		transition: color 0.5s linear;
+	}
+
+	input[type="checkbox"] + .col > label:before {
+		content: "";	
+		display: inline-block;
+		width: 55px;
+		height: 31px;
+		vertical-align: middle;
+		background: @bg-greyac;
+		border-radius: 25px;
+	}
+
+	.yes-lbl {
+		position: relative;
+	}
+
+	.yes-lbl .lbl-txt {
+		display: inline-block;
+		margin-left: 10px;
+		margin-top: 3px;
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	.yes-lbl .yes {
+		font-size: 12px;	
+		color: @bg-white;
+		position: absolute;
+		top: 15px;
+		left: 32px;
+		opacity: 1;
+		transition: all 0.7s ease-out;
+	}
+
+	.yes-lbl .no {
+		font-size: 12px;	
+		color: @bg-white;
+		position: absolute;
+		top: 15px;
+		left: 6px;
+		opacity: 0;
+		transition: all 0.7s ease-out;
+	}
+
+	.form-red {
+		display: inline-block;
+		width: 200px;
+		font-size: 13px;
+		color: @bg-red;
+		text-align: left;
+	}
+
+	input[type="checkbox"]:not(:checked) + .col > label .no {	
+		opacity: 1;
+	}
+
+	input[type="checkbox"]:not(:checked) + .col > label .yes {	
+		opacity: 0;
+	}
+
+	input[type="checkbox"]:not(:checked) + .col + .col .form-red {	
+		opacity: 0;
+		transition: all 0.7s ease-out;
+	}
+
+	input[type="checkbox"]:checked + .col + .col .form-red {	
+		opacity: 1;
+		transition: all 0.7s ease-in;
+	}
+
+
+	input[type="checkbox"] + .col > label:after {
+		content: "";
+		position: absolute;
+		height: 21px;
+		width: 21px;
+		top: 12px;
+		left: 30px;
+		border-radius: 50%;
+		background: @bg-red;
+		transition: all 0.7s ease-out;
+	}
+
+	input[type="checkbox"]:checked + .col > label:before {
+		background: @bg-darkgrey;
+	}
+
+	input[type="checkbox"]:checked + .col > label:after {
+		content: '';
+		position: absolute;
+		height: 24px;
+		width: 24px;
+		top: 10px;
+		left: 2px;
+		border-radius: 50%;
+		background: @bg-white;
+		transition: all 0.7s ease-in;
+	}	
+}
+
+.select {
+	position: relative;
+	display: inline-block;
+	&:after {
+	  content: "";
+	  background: url('../img/arrow.png') no-repeat;
+	  position: absolute;
+	  right: 10px;
+	  top: 15px;
+	  z-index: 1;
+	  width: 12px;
+	  height: 7px;
+	  pointer-events: none;
+	}
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+	
+.form .white-box {
+		input[type="checkbox"] {
+		display: none;
+	}
+
+	input[type="checkbox"] + label {
+		position: relative;
+		margin: 5px 10px;
+	}
+
+	input[type="checkbox"]:not(:checked) + label:before {
+		content: '';
+		position: absolute;
+		height: 10px;
+		width: 6px;
+		top: 1px;
+		left: 4px;
+		border-right: 2px solid red;
+		transform: rotate(39deg);
+	}
+
+	input[type="checkbox"]:not(:checked) + label:after {
+		content: '';
+		position: absolute;
+		height: 10px;
+		width: 6px;
+		top: 1px;
+		left: 7px;
+		border-left: 2px solid red;
+		transform: rotate(-45deg);
+	}
+
+	input[type="checkbox"]:checked + label:before {
+		content: '';
+		position: absolute;
+		height: 10px;
+		width: 6px;
+		top: 1px;
+		left: 4px;
+		border-right: 2px solid white;
+		border-bottom: 2px solid white;
+		transform: rotate(40deg);
+	}
+}
+	input[type="submit"] {
+		background: none;
+		border: 1px solid #e60000;
+		font-size: 16px;
+		font-weight: bold;
+		color: @bg-red;
+		padding: 15px 50px;
+		border-radius: 25px;
+		margin-top: 10px;
+		cursor: pointer;
+	}
+
+
+.col.slider-box {
+	position: relative;
+}
+.slider {
+	position: absolute;
+	top: 10px;
+	width: 251px;
+	margin: 5px;
+	margin-left: -10px;
+	height: 2px;
+	background: @bg-greyac;
+}
+
+.thumb {
+	position: absolute;
+	box-sizing: border-box;
+	top: -17px;
+	width: 90px;
+	height: 37px;
+	padding: 11px;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	background: @bg-white;
+	cursor: pointer;
+	font-family: @font-ptsans;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 12px;
+			left: 8px;
+			width: 5px;
+			height: 9px;
+			background: url('../img/arrow.jpg');
+		}	
+		&:after {
+			content: '';
+			position: absolute;
+			top: 12px;
+			right: 8px;
+			width: 5px;
+			height: 9px;
+			background: url('../img/arrow.jpg');
+			transform: rotate(180deg);
+		}
+}
+
